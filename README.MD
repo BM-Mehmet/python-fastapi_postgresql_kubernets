@@ -74,7 +74,9 @@ kubectl get pods -n devops-demo
 Uygulama servisine doğrudan erişmek ve test etmek için port yönlendirme (Port Forwarding) kullanın.
 ```bash
 kubectl port-forward -n devops-demo svc/fastapi-svc 8000:80
+```
 
+```bash
 # Hello 
 curl http://localhost:8000/hello
 
