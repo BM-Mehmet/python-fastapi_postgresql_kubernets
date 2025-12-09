@@ -11,7 +11,6 @@ DB_NAME = os.getenv("POSTGRES_DB", "demo")
 DB_USER = os.getenv("POSTGRES_USER", "demo")
 DB_PASS = os.getenv("POSTGRES_PASSWORD", "demopw")
 
-# Parse Kubernetes-injected port (tcp://host:port format)
 _port = os.getenv("POSTGRES_PORT", "5432")
 DB_PORT = int(_port.split(":")[-1]) if "://" in _port else int(_port)
 
