@@ -38,7 +38,7 @@ Uygulamaya dışarıdan erişimi sağlamak için Nginx Ingress Controller'ı Kub
 
 Ingress Controller'ı kurma
 ```bash
-kubectl apply -f "https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.14.1/deploy/static/provider/cloud/deploy.yaml"
+kubectl apply -f k8s/ingress-nginx.yaml
 ```
 Kurulum durumunu kontrol etme
 ```bash
