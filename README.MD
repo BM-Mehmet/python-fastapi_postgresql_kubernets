@@ -49,14 +49,14 @@ kubectl get svc -n ingress-nginx
 ### 3. Kubernetes Kaynaklarını Dağıtma
 
 #Uygulamanın çalışması için gerekli olan Namespace, Secret, PostgreSQL ve FastAPI kaynaklarını sırayla uygulayın.
-# Namespace, Secret ve PVC oluşturma
+#Namespace, Secret ve PVC oluşturma
 ```bash
 cd..
 kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/secret.yaml
 kubectl apply -f k8s/postgres-pvc.yaml
 ```
-# PostgreSQL Veritabanını dağıtma
+#PostgreSQL Veritabanını dağıtma
 ```bash
 kubectl apply -f k8s/postgres-deployment.yaml
 kubectl apply -f k8s/postgres-service.yaml
@@ -77,10 +77,10 @@ kubectl get pods -n devops-demo
 ```bash
 kubectl port-forward -n devops-demo svc/fastapi-svc 8000:80
 
-#Hello 
+# Hello 
 curl http://localhost:8000/hello
 
-#db-count 
+# db-count 
 curl http://localhost:8000/db-count
 
 ```
