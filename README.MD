@@ -5,7 +5,7 @@ Bu depo, bir Python FastAPI uygulamasının **PostgreSQL** veritabanı ile enteg
 ## 🌟 Proje Mimarisi
 
 * **Uygulama:** Python FastAPI (Uygulama dosyaları: `./app` klasörü)
-    * API Endpointleri: `/hello` (Hello World) ve `/db-count` (Veritabanındaki kayıt sayısını döndürür)
+    * API Endpointleri: `/hello` (Hello World) ve `/db-count` (Veritabanında gelen istek sayısını döndürür)
 * **Veritabanı:** PostgreSQL
 * **Konteynerleştirme:** Docker
 * **Orkestrasyon:** Kubernetes (Dağıtım, Servis, PVC, Secret vb. K8s manifestoları: `./k8s` klasörü)
