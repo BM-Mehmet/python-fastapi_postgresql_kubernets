@@ -51,7 +51,7 @@ kubectl get svc -n ingress-nginx
 Uygulamanın çalışması için gerekli olan Namespace, Secret, PostgreSQL ve FastAPI kaynaklarını sırayla uygulayın.
 Namespace, Secret ve PVC oluşturma
 ```bash
-cd..
+cd ..
 kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/secret.yaml
 kubectl apply -f k8s/postgres-pvc.yaml
