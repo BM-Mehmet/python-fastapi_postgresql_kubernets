@@ -17,7 +17,7 @@ Bu projeyi yerel ortamınızda çalıştırmak için aşağıdaki araçlara ihti
 
 * **Docker**
 * **kubectl** (Kubernetes komut satırı aracı)
-* **Bir Kubernetes Ortamı** (MiniKube, Kind veya yerel Docker Desktop K8s)
+* **Bir Kubernetes Ortamı** (Yerel Docker Desktop K8s)
 
 ---
 
