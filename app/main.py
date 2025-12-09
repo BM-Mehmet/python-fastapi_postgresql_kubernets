@@ -5,7 +5,7 @@ import time
 
 app = FastAPI()
 
-# Database konfigrasyonları
+""" Database konfigrasyonları"""
 DB_HOST = os.getenv("POSTGRES_HOST", "localhost")
 DB_NAME = os.getenv("POSTGRES_DB", "demo")
 DB_USER = os.getenv("POSTGRES_USER", "demo")
@@ -35,7 +35,7 @@ def hello():
 
 @app.get("/db-count")
 def db_count():
-    """Veritabanına bağlantı sayacı"""
+"""Bu endpoint her çağrıldığında hits tablosuna bir kayıt ekleyerek API'ye yapılan toplam istek sayısını sayısal olarak döner."""
     conn = get_db()
     if not conn:
         return {"error": "cannot connect to db"}
