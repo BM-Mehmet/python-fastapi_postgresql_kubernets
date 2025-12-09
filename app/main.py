@@ -5,7 +5,7 @@ import time
 
 app = FastAPI()
 
-# Database configuration
+# Database konfigrasyonları
 DB_HOST = os.getenv("POSTGRES_HOST", "localhost")
 DB_NAME = os.getenv("POSTGRES_DB", "demo")
 DB_USER = os.getenv("POSTGRES_USER", "demo")
@@ -15,7 +15,7 @@ _port = os.getenv("POSTGRES_PORT", "5432")
 DB_PORT = int(_port.split(":")[-1]) if "://" in _port else int(_port)
 
 def get_db():
-    """Get database connection with retries"""
+    """Database bağlantısını tekrar deneme"""
     for attempt in range(5):
         try:
             return psycopg2.connect(
@@ -35,7 +35,7 @@ def hello():
 
 @app.get("/db-count")
 def db_count():
-    """Get and increment hit count from database"""
+    """Veritabanına bağlantı sayacı"""
     conn = get_db()
     if not conn:
         return {"error": "cannot connect to db"}
