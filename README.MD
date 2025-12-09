@@ -84,3 +84,14 @@ curl http://localhost:8000/hello
 curl http://localhost:8000/db-count
 
 ```
+### 6. Her şeyi silmek için aşağıdaki komutları kullanın.
+```bash
+kubectl delete deployment fastapi -n devops-demo
+kubectl delete deployment postgres -n devops-demo
+kubectl delete ingress fastapi-ingress -n devops-demo
+kubectl delete pvc pg-pvc -n devops-demo
+kubectl delete svc fastapi-svc -n devops-demo
+kubectl delete svc postgres -n devops-demo
+kubectl delete namespace devops-demo
+kubectl delete namespace ingress-nginx
+```
