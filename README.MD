@@ -35,33 +35,33 @@ docker build -t devops-demo-fastapi:latest ./app
 ```
 ### 2. Nginx Ingress Controller Kurulumu
 
-#Uygulamaya dışarıdan erişimi sağlamak için Nginx Ingress Controller'ı Kubernetes kümenize kurun.
+Uygulamaya dışarıdan erişimi sağlamak için Nginx Ingress Controller'ı Kubernetes kümenize kurun.
 
 Ingress Controller'ı kurma
 ```bash
 kubectl apply -f [https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.14.1/deploy/static/provider/cloud/deploy.yaml](https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.14.1/deploy/static/provider/cloud/deploy.yaml)
 ```
-# Kurulum durumunu kontrol etme
+Kurulum durumunu kontrol etme
 ```bash
 kubectl get pods -n ingress-nginx
 kubectl get svc -n ingress-nginx
 ```
 ### 3. Kubernetes Kaynaklarını Dağıtma
 
-#Uygulamanın çalışması için gerekli olan Namespace, Secret, PostgreSQL ve FastAPI kaynaklarını sırayla uygulayın.
-#Namespace, Secret ve PVC oluşturma
+Uygulamanın çalışması için gerekli olan Namespace, Secret, PostgreSQL ve FastAPI kaynaklarını sırayla uygulayın.
+Namespace, Secret ve PVC oluşturma
 ```bash
 cd..
 kubectl apply -f k8s/namespace.yaml
 kubectl apply -f k8s/secret.yaml
 kubectl apply -f k8s/postgres-pvc.yaml
 ```
-#PostgreSQL Veritabanını dağıtma
+PostgreSQL Veritabanını dağıtma
 ```bash
 kubectl apply -f k8s/postgres-deployment.yaml
 kubectl apply -f k8s/postgres-service.yaml
 ```
-# FastAPI Uygulamasını dağıtma
+FastAPI Uygulamasını dağıtma
 ```bash
 kubectl apply -f k8s/app-deployment.yaml
 kubectl apply -f k8s/app-service.yaml
@@ -73,7 +73,7 @@ kubectl get pods -n devops-demo
 ```
 ### 5. Uygulamaya Yerel Erişim (Port Forwarding)
 
-#Uygulama servisine doğrudan erişmek ve test etmek için port yönlendirme (Port Forwarding) kullanın.
+Uygulama servisine doğrudan erişmek ve test etmek için port yönlendirme (Port Forwarding) kullanın.
 ```bash
 kubectl port-forward -n devops-demo svc/fastapi-svc 8000:80
 
